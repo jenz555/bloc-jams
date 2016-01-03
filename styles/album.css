@@ -57,6 +57,7 @@ body.album {
  
  .song-item-duration {
      width: 5%;
+<<<<<<< HEAD
  } 
 
 @media (max-width: 40rem) and (min-width: 20rem) {
@@ -77,4 +78,6 @@ body.album {
          width: 80%;
          margin: auto;
      }
+=======
+>>>>>>> checkpoint-10-albumView
  }
