@@ -47,30 +47,22 @@ body.album {
      border-bottom: 1px solid rgba(255,255,255,0.5);
  }
  
- .song-item-number  {
-     width: 20%;
+ .song-item-number {
+     width: 5%;
  }
  
  .song-item-title {
-     width: 55%;
+     width: 85%;
  }
  
  .song-item-duration {
-     width: 30%;
-   
- } 
+     width: 5%;
+ }
 
- .song-item-played{
-     width: 15%;
- } 
-
-.song-item-heading {
-    text-align: left;
-}
-
+ /* #2 */
 @media (max-width: 40rem) and (min-width: 20rem) {
      .album-view-details {
-         text-align: center
+         text-align: center;
      }
      
      .album-view-title {
@@ -86,5 +78,4 @@ body.album {
          width: 80%;
          margin: auto;
      }
-
  }
