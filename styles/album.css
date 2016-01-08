@@ -47,18 +47,26 @@ body.album {
      border-bottom: 1px solid rgba(255,255,255,0.5);
  }
  
- .song-item-number {
-     width: 5%;
+ .song-item-number  {
+     width: 20%;
  }
  
  .song-item-title {
-     width: 85%;
+     width: 55%;
  }
  
  .song-item-duration {
-     width: 5%;
-<<<<<<< HEAD
+     width: 30%;
+   
  } 
+
+ .song-item-played{
+     width: 15%;
+ } 
+
+.song-item-heading {
+    text-align: left;
+}
 
 @media (max-width: 40rem) and (min-width: 20rem) {
      .album-view-details {
@@ -78,6 +86,5 @@ body.album {
          width: 80%;
          margin: auto;
      }
-=======
->>>>>>> checkpoint-10-albumView
+
  }
