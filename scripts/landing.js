@@ -1,4 +1,4 @@
-var animatePoints = function() {
+ var animatePoints = function animatePoints() {
  
                  var points = document.getElementsByClassName('point');
  
@@ -28,5 +28,4 @@ var animatePoints = function() {
                  revealThirdPoint();
  
              };
-animatePoints();
-             
+        
