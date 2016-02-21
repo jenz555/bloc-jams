@@ -1,8 +1,7 @@
-
 var pointsArray = document.getElementsByClassName('point');
 
    var animatePoints = function animatePoints(points) {  
-    
+
      var revealPoint = function revealPoint(index) {
             points[index].style.opacity = 1;
             points[index].style.transform = "scaleX(1) translateY(0)";
@@ -30,3 +29,4 @@ var pointsArray = document.getElementsByClassName('point');
        
      });
  }
+
