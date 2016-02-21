@@ -1,22 +1,42 @@
-var points = document.getElementsByClassName("point");
-
+//This is the correct code
+       
+   var animatePoints = function animatePoints() {
+     
+     var points = document.getElementsByClassName("point");
     
-       var looping = function looping() {
-          
-          for (var i = 0; i < points.length; i++) {
-          var el = points[i];
-          
-          var revealPoint = function revealPoint() {
-            el.style.opacity = 1;
-            el.style.transform = "scaleX(1) translateY(0)";
-            el.style.msTransform = "scaleX(1) translateY(0)";                     
-            el.style.WebkitTransform = "scaleX(1) translateY(0)";  
+     var revealPoint = function revealPoint(index) {
+            points[index].style.opacity = 1;
+            points[index].style.transform = "scaleX(1) translateY(0)";
+            points[index].style.msTransform = "scaleX(1) translateY(0)";                     
+            points[index].style.WebkitTransform = "scaleX(1) translateY(0)";  
           };
-  
-           revealPoint(); 
-         }
-           
-} 
+     
+     for (var i = 0; i < points.length; i++){
+        revealPoint(i)
+     }
+     
+   };   
+
+//This is  my code - wonky
+//var points = document.getElementsByClassName("point");
+//  
+//       var looping = function looping() {
+//          
+//          for (var i = 0; i < points.length; i++) {
+//          var el = points[i];
+//          
+//          var revealPoint = function revealPoint() {
+//            el.style.opacity = 1;
+//            el.style.transform = "scaleX(1) translateY(0)";
+//            el.style.msTransform = "scaleX(1) translateY(0)";                     
+//            el.style.WebkitTransform = "scaleX(1) translateY(0)";  
+//          };
+//  
+//           revealPoint(); 
+//         }
+//           
+//} 
+      
 
 //var animatePoints = function animatePoints() {
 // 
