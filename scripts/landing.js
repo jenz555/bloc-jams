@@ -1,19 +1,17 @@
 var pointsArray = document.getElementsByClassName('point'); 
 
-var animatePoints = function(points) {  
-    var revealPoint = function(index){  
-         points[index].style.opacity = 1;
-         points[index].style.transform = "scaleX(1) translateY(0)";
-         points[index].style.msTransform = "scaleX(1) translateY(0)";
-         points[index].style.WebkitTransform = "scaleX(1) translateY(0)";
+var revealPoint = function(point){  
+         point.style.opacity = 1;
+         point.style.transform = "scaleX(1) translateY(0)";
+         point.style.msTransform = "scaleX(1) translateY(0)";
+         point.style.WebkitTransform = "scaleX(1) translateY(0)";
          
     }
-    
-    for(var i = 0; i < points.length; i++) {
-      revealPoint(i) 
-    }
-}
 
+var animatePoints = function(points) {  
+    forEach(points, revealPoint)    
+}
+//I don't see where points is referenced...I know it's an array but where are we defining it - I only see pointsArray? Shouldn't pointsArray be passed in as an argument in the forEach within animatePoints - not points? 
 
 window.onload = function (){
   
