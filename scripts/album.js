@@ -28,6 +28,21 @@ var albumMarconi = {
      ]
  };
 
+var albumNirvana = {
+     title: 'Nevermind',
+     artist: 'Nirvana',
+     label: 'DGC Records',
+     year: '1991',
+     albumArtUrl: 'assets/images/album_covers/21.png',
+     songs: [
+         { title: 'Smells like teen spirit', duration: '5:01' },
+         { title: 'In Bloom', duration: '4:14' },
+         { title: 'Come as you are', duration: '3:39'},
+         { title: 'Breed', duration: '3:04' },
+         { title: 'Lithium', duration: '4:14'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength){
     var template = 
         '<tr class="album-view-song-item">'
@@ -40,20 +55,19 @@ var createSongRow = function(songNumber, songName, songLength){
     return template;
 };
 
-var setCurrentAlbum = function(album) {
-     // #1
-     var albumTitle = document.getElementsByClassName('album-view-title')[0];
+ var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
- 
-     // #2
+
+var setCurrentAlbum = function(album) {
+    
+     // #1
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
      albumImage.setAttribute('src', album.albumArtUrl);
- 
      // #3
      albumSongList.innerHTML = '';
  
@@ -62,7 +76,27 @@ var setCurrentAlbum = function(album) {
          albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
  };
- 
+
+
+
+var albums = [albumPicasso, albumMarconi, albumNirvana];
+
  window.onload = function() {
-     setCurrentAlbum(albumPicasso);
+   setCurrentAlbum(albumPicasso);
+     
+   var btn = document.getElementById('toggle');
+   var index = 1;
+   
+   btn.addEventListener('click', function(event) {
+      setCurrentAlbum(albums[index]);
+      
+      index++ 
+      if (index == albums.length) {
+        index = 0;
+      }
+    
+   
+   
+   });
+   
  };
