@@ -28,6 +28,21 @@ var albumMarconi = {
      ]
  };
 
+var albumNirvana = {
+     title: 'Nevermind',
+     artist: 'Nirvana',
+     label: 'EM',
+     year: '1991',
+     albumArtUrl: 'assets/images/album_covers/21.png',
+     songs: [
+         { title: 'Breed', duration: '2:01' },
+         { title: 'Lithium', duration: '4:02' },
+         { title: 'On a Plane', duration: '2:45'},
+         { title: 'Smells Like Teen Spirit', duration: '3:41' },
+         { title: 'In Bloom', duration: '1:13'}
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength){
     var template = 
         '<tr class="album-view-song-item">'
@@ -40,15 +55,14 @@ var createSongRow = function(songNumber, songName, songLength){
     return template;
 };
 
-var setCurrentAlbum = function(album) {
-     // #1
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
  
-     // #2
+
+var setCurrentAlbum = function(album) {
      albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -59,10 +73,22 @@ var setCurrentAlbum = function(album) {
  
      // #4
      for (var i = 0; i < album.songs.length; i++) {
-         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title,      album.songs[i].duration);
      }
  };
- 
+
+  var albums = [albumPicasso, albumMarconi, albumNirvana]
+  console.log(albums[0].artist)
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+     var index = 1;
+      
+      albumImage.addEventListener('click', function (e){
+        setCurrentAlbum(albums[index]);
+        index++
+        if (index == albums.length) {
+          index = 0;
+        }
+      
+      });
  };
