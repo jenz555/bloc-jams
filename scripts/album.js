@@ -92,18 +92,6 @@ var getSongItem = function(element) {
 };
 
  var clickHandler = function(targetElement) {
-<<<<<<< HEAD
-   var songItem = getSongItem(targetElement);
-   
-   if (currentlyPlayingSong === null) {
-         songItem.innerHTML = pauseButtonTemplate;
-         currentlyPlayingSong = songItem.getAttribute('data-song-number');
-     } else if (currentlyPlayingSong === songItem.getAttribute('data-song-number')) {
-         songItem.innerHTML = playButtonTemplate;
-         currentlyPlayingSong = null;
-   
-     } else if (currentlyPlayingSong !== songItem.getAttribute('data-song-number')) {
-=======
     var songItem = getSongItem(targetElement);  
     
    if (currentlyPlayingSong === null) {
@@ -117,17 +105,11 @@ var getSongItem = function(element) {
      }
 
      else if (currentlyPlayingSong !== songItem.getAttribute('data-song-number')) {
->>>>>>> checkpoint-27-DOM-Play/Pause
          var currentlyPlayingSongElement = document.querySelector('[data-song-number="' + currentlyPlayingSong + '"]');
          currentlyPlayingSongElement.innerHTML = currentlyPlayingSongElement.getAttribute('data-song-number');
          songItem.innerHTML = pauseButtonTemplate;
          currentlyPlayingSong = songItem.getAttribute('data-song-number');
      }
-<<<<<<< HEAD
-   
- };
-
-=======
  };
 
 //Jen's attempt
@@ -167,21 +149,15 @@ var getSongItem = function(element) {
 //  }
 
 
->>>>>>> checkpoint-27-DOM-Play/Pause
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
-<<<<<<< HEAD
- // Store state of playing songs
- var currentlyPlayingSong = null;
-=======
 // Store state of playing songs
 var currentlyPlayingSong = null;
 
->>>>>>> checkpoint-27-DOM-Play/Pause
 
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
@@ -193,15 +169,9 @@ var currentlyPlayingSong = null;
     
     // Only target individual song rows during event delegation
          if (event.target.parentElement.className === 'album-view-song-item') {
-<<<<<<< HEAD
-           event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
-           var songItem = getSongItem(event.target);
-           
-=======
           // Change the content from the number to the play button's HTML
            var songItem = getSongItem(event.target);
 
->>>>>>> checkpoint-27-DOM-Play/Pause
            if (songItem.getAttribute('data-song-number') !== currentlyPlayingSong) {
                songItem.innerHTML = playButtonTemplate;
            }
@@ -210,31 +180,17 @@ var currentlyPlayingSong = null;
    for (var i = 0; i < songRows.length; i++) {
         songRows[i].addEventListener('mouseleave', function(event) {
              // Revert the content back to the number
-<<<<<<< HEAD
-            // Selects first child element, which is the song-item-number element
-            
-           var songItem = getSongItem(event.target);
-             var songItemNumber = songItem.getAttribute('data-song-number');
- 
-             // #2
-=======
              var songItem = getSongItem(event.target);
              var songItemNumber = songItem.getAttribute('data-song-number');
  
              
->>>>>>> checkpoint-27-DOM-Play/Pause
              if (songItemNumber !== currentlyPlayingSong) {
                  songItem.innerHTML = songItemNumber;
              }
          });
      
         songRows[i].addEventListener('click', function(event) {
-<<<<<<< HEAD
-             // Event handler call
-          clickHandler(event.target);
-=======
              clickHandler(event.target);
->>>>>>> checkpoint-27-DOM-Play/Pause
          });
      }
  }
