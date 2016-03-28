@@ -64,13 +64,26 @@ var setCurrentAlbum = function(album) {
  };
 
 var findParentByClassName = function findParentByClassName(element, targetClass) {
-   var currentParent = element.parentElement;  
-        if (element) {
-          while (currentParent.className != targetClass) {
-              currentParent = currentParent.parentElement;
-          }
+     var currentParent = element.parentElement;  
+  
+    if (currentParent) {
+       while (currentParent.className && currentParent.className != targetClass) {
+            currentParent = currentParent.parentElement;
+        }
+      
+        if (currentParent.className == targetClass) {
         return currentParent;
+          
+        } else {
+          alert("No Parent with that class name found.")
+
+        }
+    } 
+
+    else {
+      alert("No Parent Found")
     }
+            
 };
 
 var getSongItem = function(element) {
